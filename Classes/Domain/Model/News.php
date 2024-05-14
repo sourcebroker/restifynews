@@ -156,11 +156,23 @@ class News extends \GeorgRinger\News\Domain\Model\News
      * @var \DateTime
      * @T3api\Serializer\Groups({
      *     "api_get_collection_t3apinews_news",
-     *     "api_get_item_t3apinews_news",
-     *     "api_post_item_t3apinews_news",
+     *      "api_get_item_t3apinews_news",
+     *      "api_post_item_t3apinews_news",
+     *      "api_patch_item_t3apinews_news",
+     *      "api_put_item_t3apinews_news",
      * })
      */
     protected $datetime;
+
+    /**
+     * @var \Datetime
+     * @T3api\Serializer\Groups({
+     *      "api_post_item_t3apinews_news",
+     *      "api_patch_item_t3apinews_news",
+     *      "api_put_item_t3apinews_news",
+     * })
+     */
+    protected $crdate;
 
     /**
      * @var string
@@ -195,10 +207,24 @@ class News extends \GeorgRinger\News\Domain\Model\News
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\SourceBroker\T3apinews\Domain\Model\News>
      * @T3api\Serializer\Groups({
-     *     "api_get_item_t3apinews_news",
+     *      "api_get_item_t3apinews_news",
+     *      "api_post_item_t3apinews_news",
+     *      "api_patch_item_t3apinews_news",
+     *      "api_put_item_t3apinews_news",
      * })
      */
     protected $related;
+
+    /**
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\SourceBroker\T3apinews\Domain\Model\News>
+     * @T3api\Serializer\Groups({
+     *      "api_get_item_t3apinews_news",
+     *      "api_post_item_t3apinews_news",
+     *      "api_patch_item_t3apinews_news",
+     *      "api_put_item_t3apinews_news",
+     * })
+     */
+    protected $relatedFrom;
 
     /**
      * @var string
@@ -209,6 +235,15 @@ class News extends \GeorgRinger\News\Domain\Model\News
      */
     protected $type = '';
 
+    /**
+     * @var string
+     * @T3api\Serializer\Groups({
+     *     "api_post_item_t3apinews_news",
+     *     "api_patch_item_t3apinews_news",
+     *     "api_put_item_t3apinews_news",
+     * })
+     */
+    protected $pathSegment = '';
     /**
      * @var string
      * @T3api\Serializer\Groups({
